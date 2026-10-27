@@ -1,0 +1,30 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'net.daffodil.reseller'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "net.daffodil.reseller"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+        // Website URL baked into the app
+        buildConfigField "String", "START_URL", "\"https://portal.daffodilnet.com/MacResellerDashboard/Index\""
+    }
+
+    buildFeatures { buildConfig true }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
